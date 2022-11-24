@@ -2,5 +2,7 @@
 // import { createManu } from './main_page';
 
 import './style.css';
-createManu();
-createMainPage(); // this should work as expected!
+
+
+// createManu();
+// createMainPage(); // this should work as expected!

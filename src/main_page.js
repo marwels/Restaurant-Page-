@@ -52,7 +52,7 @@ const Header = function Header(parentEl) {
         // menuButton.addEventListener("click", XXX)
     }
 
-    parentEl.appendChild(menuEl);
+    parentEl.appendChild(menuBar);
 
     return () => {
         children.forEach(destroy => destroy());
