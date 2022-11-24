@@ -43,6 +43,7 @@ const Header = function Header(parentEl) {
 
     const logo = document.createElement("div");
     logo.classList.add("logo");
+    logo.innerText = "LOGO";
     menuBar.appendChild(logo);
 
 
