@@ -116,5 +116,5 @@ App(document.getElementById("content"));
 
 
 
-export { createManu };
-export { createMainPage };
+// export { createManu };
+// export { createMainPage };
