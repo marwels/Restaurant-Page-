@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'DMSans';
+  src: url('./fonts/DMSans-Medium.ttf') format('ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DMSansBold';
+  src: url('./fonts/DMSans-Bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "DMSans";
+}
+
+.menu_bar {
+    background-color: #f2f2f2;
+}
+
+.logo {
+
+}
