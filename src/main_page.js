@@ -11,9 +11,24 @@ const Button = function Button(parentEl, className, label, onClick) {
     }
 }
 
+const Ahref = function Ahref(parentEl, className, label, onClick) {
+    const a = document.createElement("a");
+    const link = document.createTextNode(label);
+    a.className = className;
+    a.title = label;
+    a.appendChild(link);
+    // a.href = "https://www.aaa.com"; 
+    a.addEventListener("click", onClick);
+    parentEl.appendChild(a);
+
+    return () => {
+        parentEl.removeChild(a);
+    }
+}
+
 const MenuButton = function MenuButton(parentEl, label, onClick) {
     const wrapper = document.createElement("div");
-    const destroy = Button(wrapper, "menu-button", label, onClick);
+    const destroy = Ahref(wrapper, "menu-button", label, onClick);
     parentEl.appendChild(wrapper);
 
     return () => {
@@ -40,7 +55,7 @@ const Header = function Header(parentEl) {
     //     })
     // ]
 
-    let menuButtonNames = ["home", "sweet", "savory", "contact"]
+    let menuButtonNames = ["Home", "Sweet", "Savory", "Contact"]
 
     const children = [];
 
@@ -97,10 +112,10 @@ const App = function App(parentEl) {
     const children = [
         Header(parentEl),
         Router(parentEl, [
-            ['#sweet', (targetEl) => Sweet(targetEl)]
-            ['#savory', (targetEl) => Savory(targetEl)]
-            ['#contact', (targetEl) => Contact(targetEl)]
-            ['#home', (targetEl) => Home(targetEl)]
+            // ['#sweet', (targetEl) => Sweet(targetEl)],
+            // ['#savory', (targetEl) => Savory(targetEl)],
+            // ['#contact', (targetEl) => Contact(targetEl)],
+            // ['#home', (targetEl) => Home(targetEl)],
             ['', (targetEl) => Home(targetEl)]
         ])
     ]
@@ -110,6 +125,16 @@ const App = function App(parentEl) {
     }
 }
 
+
+const Home = function Home(targetEl) {
+    const el = document.createElement("div")
+    el.innerText = "test";
+
+    targetEl.appendChild(el)
+    return () => {
+        targetEl.removeChild(el);
+    }
+}
 App(document.getElementById("content"));
 
 
