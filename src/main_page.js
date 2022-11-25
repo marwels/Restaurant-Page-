@@ -28,6 +28,7 @@ const Ahref = function Ahref(parentEl, className, label, onClick) {
 
 const MenuButton = function MenuButton(parentEl, label, onClick) {
     const wrapper = document.createElement("div");
+    wrapper.className = "buttonWrapper";
     const destroy = Ahref(wrapper, "menu-button", label, onClick);
     parentEl.appendChild(wrapper);
 
@@ -58,16 +59,19 @@ const Header = function Header(parentEl) {
 
     let menuButtonNames = ["Home", "Sweet", "Savory", "Contact"]
 
+    const menuButtonsDiv = document.createElement("div");
+    menuButtonsDiv.classList.add("menuButtonsDiv");
+
     const children = [];
 
     for (let i = 0; i < menuButtonNames.length; i++) {
         const btn_name = menuButtonNames[i];
-        children.push(MenuButton(menuBar, btn_name, () => {
+        children.push(MenuButton(menuButtonsDiv, btn_name, () => {
             window.location.hash = `#${btn_name}`
         }))
         // menuButton.addEventListener("click", XXX)
     }
-
+    menuBar.appendChild(menuButtonsDiv);
     parentEl.appendChild(menuBar);
 
     return () => {
