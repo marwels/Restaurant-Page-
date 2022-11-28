@@ -20,6 +20,11 @@ body {
     margin: 0;
     font-family: DMSans;
     background-color: #ffffff;
+    background-image: url('./images/patrick-fore-m9qWesqRN0M-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .menu_bar {
@@ -64,4 +69,35 @@ padding: 0 2rem;
 .buttonWrapper {
   padding: 0 1rem;
 border-radius: 0.7rem 0.7rem 0 0;
+}
+
+.homeContainer {
+  color: #ffffff;
+  padding: 4rem;
+}
+
+.homeContainer .textDivWrappar {
+  max-width: 50vw;
+  padding-left: 2rem;
+}
+
+.homeContainer h1.title {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-size: 2.4rem;
+}
+
+.homeContainer p {
+  font-size: 1.2rem;
+
+}
+
+
+
+.homeContainer .textDivWrappar button {
+background-color: #f14a0e;
+color: #ffffff;
+ border: 1px solid #f14a0e;
+ padding: 0.4rem 1rem;
+ border-radius: 15px;
 }

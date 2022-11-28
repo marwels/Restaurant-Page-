@@ -10,7 +10,7 @@ const MakeHome = function MakeHome(targetEl) {
 
     let title = document.createElement("h1");
     title.classList.add("title");
-    title.innerText = "Our journey to artisan sourdough bakery";
+    title.innerText = "Our journey to artisan bakery";
     textDivWrappar.appendChild(title);
 
     let text = document.createElement("p");
