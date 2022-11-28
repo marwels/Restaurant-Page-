@@ -1,3 +1,5 @@
+import { MakeHome } from './home';
+
 
 const Button = function Button(parentEl, className, label, onClick) {
     const button = document.createElement("button");
@@ -121,7 +123,7 @@ const App = function App(parentEl) {
             // ['#savory', (targetEl) => Savory(targetEl)],
             // ['#contact', (targetEl) => Contact(targetEl)],
             // ['#home', (targetEl) => Home(targetEl)],
-            ['', (targetEl) => Home(targetEl)]
+            ['', (targetEl) => MakeHome(targetEl)]
         ])
     ]
 
@@ -131,20 +133,22 @@ const App = function App(parentEl) {
 }
 
 
-const Home = function Home(targetEl) {
-    const el = document.createElement("div")
-    el.innerText = "test";
+// const Home = function Home(targetEl) {
+//     const el = document.createElement("div")
+//     el.innerText = "test";
 
-    targetEl.appendChild(el)
-    return () => {
-        targetEl.removeChild(el);
-    }
-}
+//     targetEl.appendChild(el)
+//     return () => {
+//         targetEl.removeChild(el);
+//     }
+// }
+
+
 App(document.getElementById("content"));
 
 
 
 
 
-// export { createManu };
+export { Button };
 // export { createMainPage };
