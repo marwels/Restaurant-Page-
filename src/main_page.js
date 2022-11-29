@@ -121,10 +121,10 @@ const App = function App(parentEl) {
     const children = [
         Header(parentEl),
         Router(parentEl, [
-            ['#sweet', (targetEl) => MakeSweet(targetEl)],
-            // ['#savory', (targetEl) => Savory(targetEl)],
-            // ['#contact', (targetEl) => Contact(targetEl)],
-            ['#home', (targetEl) => MakeHome(targetEl)],
+            ['#Sweet', (targetEl) => MakeSweet(targetEl)],
+            // ['#Savory', (targetEl) => Savory(targetEl)],
+            // ['#Contact', (targetEl) => Contact(targetEl)],
+            ['#Home', (targetEl) => MakeHome(targetEl)],
             ['', (targetEl) => MakeHome(targetEl)]
         ])
     ]

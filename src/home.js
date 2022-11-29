@@ -2,6 +2,8 @@ import { Button } from './main_page';
 
 const MakeHome = function MakeHome(targetEl) {
 
+    document.body.className = "home";
+
     let homeContainer = document.createElement("div");
     homeContainer.classList.add("homeContainer");
 

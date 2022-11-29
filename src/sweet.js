@@ -2,6 +2,7 @@ import { Button } from './main_page';
 
 
 const FoodItem = function FoodItem(parentEl, className, itemName, price, onClickBuy) {
+    document.body.className = "sweet";
     const div = document.createElement("div");
     div.className = className;
     const title = document.createElement("h2");
@@ -17,7 +18,7 @@ const FoodItem = function FoodItem(parentEl, className, itemName, price, onClick
 
     return () => {
         destroy();
-        parentEl.removeChild(button);
+        parentEl.removeChild(div);
     }
 }
 
@@ -30,16 +31,25 @@ const MakeSweet = function MakeSweet(targetEl) {
     let itemNames = ["muffin", "csruffin", "pain au chocolat", "croissant", "tartelette"];
     let itemPrices = [3, 6, 6, 5, 8];
 
+    let children = []
 
     for (let i = 0; i < 5; i++) {
         classNameFoodItem += `{i}`
-        FoodItem(sweetContainer, classNameFoodItem, itemNames[i], itemPrices[i], onClickBuy);
+        children.push(
+            FoodItem(
+                sweetContainer,
+                classNameFoodItem,
+                itemNames[i],
+                itemPrices[i],
+                () => alert("This would add item to the order"))
+        );
     }
 
 
-
+    targetEl.appendChild(sweetContainer);
 
     return () => {
+        children.forEach((destroy) => destroy());
         targetEl.removeChild(sweetContainer);
     }
 }

@@ -20,11 +20,18 @@ body {
     margin: 0;
     font-family: DMSans;
     background-color: #ffffff;
-    background-image: url('./images/patrick-fore-m9qWesqRN0M-unsplash.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  body.home {
+  background-image: url('./images/patrick-fore-m9qWesqRN0M-unsplash.jpg');
+}
+
+body.sweet {
+  background-image: url(./images/croissant.jpg);
 }
 
 .menu_bar {
