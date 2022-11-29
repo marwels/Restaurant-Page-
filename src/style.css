@@ -27,11 +27,15 @@ body {
   }
   
   body.home {
-  background-image: url('./images/patrick-fore-m9qWesqRN0M-unsplash.jpg');
+  background-image: url('./images/main.jpg');
 }
 
 body.sweet {
   background-image: url(./images/croissant.jpg);
+}
+
+body.savory {
+  background-image: url(./images/bread.jpg);
 }
 
 .menu_bar {
@@ -110,7 +114,7 @@ color: #ffffff;
 
 /* sweet */
 
-.sweetContainer {
+.sweetContainer, .savoryContainer {
   display: flex;
   flex-wrap: wrap;
   color: #ffffff;
@@ -118,7 +122,7 @@ color: #ffffff;
   padding: 6rem;
 }
 
-.sweetContainer .foodItem {
+.sweetContainer .foodItem, .savoryContainer .foodItem {
   background-color: rgba(0, 0, 0, 0.7);
   border: 1px solid rgba(0, 0, 0, 0.7);
   border-radius: 20px;
@@ -126,7 +130,7 @@ color: #ffffff;
   /* min-width: 10rem; */
 }
 
-.sweetContainer .foodItem .titleWrapper {
+.sweetContainer .foodItem .titleWrapper, .savoryContainer .foodItem .titleWrapper {
   display: flex;
   justify-content: space-around;
 }

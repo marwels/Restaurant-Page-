@@ -1,8 +1,10 @@
 import { Button } from './DOMcomponents';
-import { Ahref } from './DOMcomponents';
+// import { Ahref } from './DOMcomponents';
 import { MenuButton } from './DOMcomponents';
 import { MakeHome } from './home';
 import { MakeSweet } from './sweet';
+import { MakeSavory } from './savory';
+
 
 
 
@@ -76,7 +78,7 @@ const App = function App(parentEl) {
         Header(parentEl),
         Router(parentEl, [
             ['#Sweet', (targetEl) => MakeSweet(targetEl)],
-            // ['#Savory', (targetEl) => Savory(targetEl)],
+            ['#Savory', (targetEl) => MakeSavory(targetEl)],
             // ['#Contact', (targetEl) => Contact(targetEl)],
             ['#Home', (targetEl) => MakeHome(targetEl)],
             ['', (targetEl) => MakeHome(targetEl)]
