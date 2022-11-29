@@ -32,6 +32,4 @@ const MakeHome = function MakeHome(targetEl) {
 }
 
 
-
-
 export { MakeHome };

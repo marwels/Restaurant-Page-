@@ -99,10 +99,44 @@ border-radius: 0.7rem 0.7rem 0 0;
 
 }
 
-
-
 .homeContainer .textDivWrappar button {
 background-color: #f14a0e;
+color: #ffffff;
+ border: 1px solid #f14a0e;
+ padding: 0.4rem 1rem;
+ border-radius: 15px;
+}
+
+
+/* sweet */
+
+.sweetContainer {
+  display: flex;
+  flex-wrap: wrap;
+  color: #ffffff;
+  gap: 2rem;
+  padding: 6rem;
+}
+
+.sweetContainer .foodItem {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  flex: 1;
+  /* min-width: 10rem; */
+}
+
+.sweetContainer .foodItem .titleWrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.foodItem h2.itemName {
+  text-align: center;
+}
+
+button.order-button {
+  background-color: #f14a0e;
 color: #ffffff;
  border: 1px solid #f14a0e;
  padding: 0.4rem 1rem;
