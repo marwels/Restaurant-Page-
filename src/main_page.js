@@ -1,4 +1,6 @@
 import { MakeHome } from './home';
+import { MakeSweet } from './sweet';
+
 
 
 const Button = function Button(parentEl, className, label, onClick) {
@@ -119,10 +121,10 @@ const App = function App(parentEl) {
     const children = [
         Header(parentEl),
         Router(parentEl, [
-            // ['#sweet', (targetEl) => Sweet(targetEl)],
+            ['#sweet', (targetEl) => MakeSweet(targetEl)],
             // ['#savory', (targetEl) => Savory(targetEl)],
             // ['#contact', (targetEl) => Contact(targetEl)],
-            // ['#home', (targetEl) => Home(targetEl)],
+            ['#home', (targetEl) => MakeHome(targetEl)],
             ['', (targetEl) => MakeHome(targetEl)]
         ])
     ]
