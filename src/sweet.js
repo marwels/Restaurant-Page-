@@ -1,30 +1,6 @@
-import { Button } from './main_page';
+// import { Button } from './DOMcomponents';
+import { FoodItem } from './DOMcomponents';
 
-
-const FoodItem = function FoodItem(parentEl, className, itemName, price, onClickBuy) {
-
-    const div = document.createElement("div");
-    div.className = className;
-    const titleWrapper = document.createElement("div");
-    titleWrapper.className = "titleWrapper";
-    const title = document.createElement("h2");
-    title.className = "itemName";
-    title.innerText = itemName;
-    titleWrapper.appendChild(title);
-    const priceOfItem = document.createElement("h2");
-    priceOfItem.innerText = price;
-    titleWrapper.appendChild(priceOfItem);
-    div.appendChild(titleWrapper);
-
-    parentEl.appendChild(div);
-
-    const destroy = Button(div, "order-button", "ORDER", onClickBuy);
-
-    return () => {
-        destroy();
-        parentEl.removeChild(div);
-    }
-}
 
 const MakeSweet = function MakeSweet(targetEl) {
     document.body.className = "sweet";
