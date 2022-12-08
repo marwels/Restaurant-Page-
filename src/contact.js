@@ -1,26 +1,4 @@
-
-
-
-const Input = function Input(parentEl, className, label, type, name, placeholder) {
-    const labelForInput = document.createElement("label");
-    labelForInput.setAttribute("for", label);
-    labelForInput.innerText = label;
-    parentEl.appendChild(labelForInput);
-
-    const input = document.createElement("input");
-    input.className = className;
-    input.setAttribute("minlength", "1");
-    input.setAttribute("maxlength", "2000");
-    input.setAttribute("type", type);
-    input.setAttribute("name", name);
-    input.setAttribute("placeholder", placeholder);
-
-    parentEl.appendChild(input);
-
-    return () => {
-        parentEl.removeChild(input);
-    }
-}
+import { Input } from './DOMcomponents';
 
 const MakeForm = function MakeForm(targetEl) {
 
@@ -49,6 +27,32 @@ const MakeForm = function MakeForm(targetEl) {
     }
 }
 
+const SquareDivWithIcon = function SquareDivWithIcon(parentEl, className, title, moreText) {
+    const div = document.createElement("div");
+    div.className = className;
+
+    const icon = document.createElement("div");
+    icon.className = "icon"
+    div.appendChild(icon);
+
+    const p1 = document.createElement("p");
+    p1.innerText = title;
+    div.appendChild(p1);
+
+    const p2 = document.createElement("p");
+    p2.innerText = moreText;
+    div.appendChild(p2);
+
+    parentEl.appendChild(div);
+
+    return () => {
+        parentEl.removeChild(div);
+    }
+}
+
+
+
+
 
 const MakeContact = function MakeContact(targetEl) {
     document.body.className = "contact";
@@ -56,7 +60,17 @@ const MakeContact = function MakeContact(targetEl) {
     let contactContainer = document.createElement("div");
     contactContainer.classList.add("contactContainer");
 
+
     MakeForm(contactContainer);
+
+    const squares = document.createElement("div");
+    contactContainer.appendChild(squares);
+
+    SquareDivWithIcon(squares, "SquareDivWithIcon, office", "OUR MAIN OFFICE", "Somewher 6, Over the Rainbow 12-345");
+    SquareDivWithIcon(squares, "SquareDivWithIcon, phone", "PHONE NUMBER", "1234567890");
+    SquareDivWithIcon(squares, "SquareDivWithIcon, fax", "FAX", "1234567890");
+    SquareDivWithIcon(squares, "SquareDivWithIcon, email", "FAX", "bun@bakery.com");
+
 
 
     targetEl.appendChild(contactContainer);
