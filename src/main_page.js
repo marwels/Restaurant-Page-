@@ -4,6 +4,7 @@ import { MenuButton } from './DOMcomponents';
 import { MakeHome } from './home';
 import { MakeSweet } from './sweet';
 import { MakeSavory } from './savory';
+import { MakeContact } from './contact';
 
 
 
@@ -79,7 +80,7 @@ const App = function App(parentEl) {
         Router(parentEl, [
             ['#Sweet', (targetEl) => MakeSweet(targetEl)],
             ['#Savory', (targetEl) => MakeSavory(targetEl)],
-            // ['#Contact', (targetEl) => Contact(targetEl)],
+            ['#Contact', (targetEl) => MakeContact(targetEl)],
             ['#Home', (targetEl) => MakeHome(targetEl)],
             ['', (targetEl) => MakeHome(targetEl)]
         ])
