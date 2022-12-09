@@ -1,13 +1,13 @@
 @font-face {
   font-family: DMSans;
-  src: url('./fonts/DMSans-Medium.ttf') format('ttf');
+  src: url('./fonts/DMSans-Medium.ttf') format('otf');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: DMSansBold;
-  src: url('./fonts/DMSans-Bold.ttf') format('ttf');
+  src: url('./fonts/DMSans-Bold.ttf') format('otf');
   font-weight: 700;
   font-style: normal;
 }
@@ -158,8 +158,35 @@ color: #ffffff;
 /* contact */
 
 .contactContainer {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   color: #ffffff;
   gap: 2rem;
   padding: 6rem;
+}
+
+.contactContainer form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactContainer form label {
+  margin-top: 0.5rem;
+}
+
+.contactContainer form button {
+  background-color: #f14a0e;
+color: #ffffff;
+ border: 1px solid #f14a0e;
+ margin-top: 1rem;
+ padding: 0.4rem 1rem;
+ border-radius: 15px;
+ width: min-content;
+ align-self: center;
+}
+
+.contactContainer div.squares {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }

@@ -9,8 +9,20 @@ const MakeForm = function MakeForm(targetEl) {
     Input(form, "formInput", "Email", "email", "email", "");
     Input(form, "formInput", "Name", "text", "name", "");
     Input(form, "formInput", "Address", "text", "address", "");
-    Input(form, "formInput", "Message", "text", "message", "");
 
+    const labelForTextarea = document.createElement("label");
+    labelForTextarea.setAttribute("for", "message");
+    labelForTextarea.innerText = "Message";
+    form.appendChild(labelForTextarea);
+
+    const textarea = document.createElement("textarea");
+    textarea.className = "message";
+    textarea.setAttribute("minlength", "1");
+    textarea.setAttribute("maxlength", "2000");
+    textarea.setAttribute("name", "message");
+    textarea.setAttribute("rows", "6");
+    form.appendChild(textarea);
+   
 
     // create a submit button
     const submit = document.createElement("button");
@@ -64,12 +76,12 @@ const MakeContact = function MakeContact(targetEl) {
     MakeForm(contactContainer);
 
     const squares = document.createElement("div");
+    squares.classList.add("squares");
     contactContainer.appendChild(squares);
-
     SquareDivWithIcon(squares, "SquareDivWithIcon, office", "OUR MAIN OFFICE", "Somewher 6, Over the Rainbow 12-345");
     SquareDivWithIcon(squares, "SquareDivWithIcon, phone", "PHONE NUMBER", "1234567890");
     SquareDivWithIcon(squares, "SquareDivWithIcon, fax", "FAX", "1234567890");
-    SquareDivWithIcon(squares, "SquareDivWithIcon, email", "FAX", "bun@bakery.com");
+    SquareDivWithIcon(squares, "SquareDivWithIcon, email", "EMAIL", "bun@bakery.com");
 
 
 
