@@ -189,5 +189,21 @@ color: #ffffff;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+div.contactContainer div.squares div.SquareDivWithIcon {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  text-align: center;
+  padding: 0.5rem;
+}

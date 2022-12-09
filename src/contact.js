@@ -39,12 +39,13 @@ const MakeForm = function MakeForm(targetEl) {
     }
 }
 
-const SquareDivWithIcon = function SquareDivWithIcon(parentEl, className, title, moreText) {
+const SquareDivWithIcon = function SquareDivWithIcon(parentEl, className, iconUniCode, title, moreText) {
     const div = document.createElement("div");
     div.className = className;
 
     const icon = document.createElement("div");
-    icon.className = "icon"
+    icon.className = "icon, material-symbols-outlined";
+    icon.innerText=iconUniCode;
     div.appendChild(icon);
 
     const p1 = document.createElement("p");
@@ -78,10 +79,10 @@ const MakeContact = function MakeContact(targetEl) {
     const squares = document.createElement("div");
     squares.classList.add("squares");
     contactContainer.appendChild(squares);
-    SquareDivWithIcon(squares, "SquareDivWithIcon, office", "OUR MAIN OFFICE", "Somewher 6, Over the Rainbow 12-345");
-    SquareDivWithIcon(squares, "SquareDivWithIcon, phone", "PHONE NUMBER", "1234567890");
-    SquareDivWithIcon(squares, "SquareDivWithIcon, fax", "FAX", "1234567890");
-    SquareDivWithIcon(squares, "SquareDivWithIcon, email", "EMAIL", "bun@bakery.com");
+    SquareDivWithIcon(squares, "SquareDivWithIcon", "home_pin", "OUR MAIN OFFICE", "Somewher 6, Over the Rainbow 12-345");
+    SquareDivWithIcon(squares, "SquareDivWithIcon", "call", "PHONE NUMBER", "1234567890");
+    SquareDivWithIcon(squares, "SquareDivWithIcon", "fax", "FAX", "1234567890");
+    SquareDivWithIcon(squares, "SquareDivWithIcon", "mail", "EMAIL", "bun@bakery.com");
 
 
 
