@@ -1,13 +1,13 @@
 @font-face {
   font-family: DMSans;
-  src: url('./fonts/DMSans-Medium.ttf') format('otf');
+  src: url('./fonts/DMSans-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: DMSansBold;
-  src: url('./fonts/DMSans-Bold.ttf') format('otf');
+  src: url('./fonts/DMSans-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
 }
@@ -190,3 +190,4 @@ color: #ffffff;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
 }
+
