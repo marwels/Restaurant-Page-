@@ -27,6 +27,7 @@ const PageHome = function PageHome(targetEl) {
 
 
     return () => {
+        //Jasio: czy to trzeba lepiej sprzątać?
         targetEl.removeChild(homeContainer);
     }
 }

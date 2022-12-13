@@ -37,15 +37,15 @@ const SquareDivWithIcon = function SquareDivWithIcon(parentEl, className, iconUn
     const icon = document.createElement("div");
     icon.className = "icon, material-symbols-outlined";
     icon.innerText=iconUniCode;
-    div.appendChild(icon);
+    divSquareDivWithIcon.appendChild(icon);
 
     const p1 = document.createElement("p");
     p1.innerText = title;
-    div.appendChild(p1);
+    divSquareDivWithIcon.appendChild(p1);
 
     const p2 = document.createElement("p");
     p2.innerText = moreText;
-    div.appendChild(p2);
+    divSquareDivWithIcon.appendChild(p2);
 
     parentEl.appendChild(divSquareDivWithIcon);
 
