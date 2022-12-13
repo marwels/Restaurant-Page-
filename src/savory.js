@@ -1,7 +1,7 @@
-import { FoodItem } from './DOMcomponents/FoodItem';
+import { FoodItem } from './Components/FoodItem';
 
 
-const MakeSavory = function MakeSavory(targetEl) {
+const PageSavory = function PageSavory(targetEl) {
     document.body.className = "savory";
 
     let savoryContainer = document.createElement("div");
@@ -41,4 +41,4 @@ const MakeSavory = function MakeSavory(targetEl) {
 
 
 
-export { MakeSavory };
+export { PageSavory };

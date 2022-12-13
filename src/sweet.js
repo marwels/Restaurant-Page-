@@ -1,5 +1,5 @@
 // import { Button } from './DOMcomponents/Button';
-import { FoodItem } from './DOMcomponents/FoodItem';
+import { FoodItem } from './Components/FoodItem';
 
 
 const PageSweet = function MakeSweet(targetEl) {

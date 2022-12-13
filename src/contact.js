@@ -1,6 +1,6 @@
-import { Input } from './DOMcomponents/Input';
-import { TextArea } from './DOMcomponents/TextArea';
-import { HumbleDiv } from './DOMcomponents/HumbleDiv';
+import { Input } from './Components/Input';
+import { TextArea } from './Components/TextArea';
+import { HumbleDiv } from './Components/HumbleDiv';
 
 const Form = function Form(targetEl) {
     const form = document.createElement("form");

@@ -1,7 +1,7 @@
-import { Button } from './DOMcomponents/Button';
+import { Button } from './Components/Button';
 // import { Ahref } from './DOMcomponents/Ahref';
-import { MenuButton } from './DOMcomponents/MenuButton';
-import { Header } from './DOMcomponents//Header';
+import { MenuButton } from './Components/MenuButton';
+import { Header } from './Components/Header';
 import { PageHome } from './home';
 import { PageSweet } from './sweet';
 import { MakeSavory } from './savory';
@@ -49,7 +49,7 @@ const App = function App(parentEl) {
         Header(parentEl),
         Router(parentEl, [
             ['#Sweet', (targetEl) => PageSweet(targetEl)],
-            ['#Savory', (targetEl) => MakeSavory(targetEl)],
+            ['#Savory', (targetEl) => PageSavory(targetEl)],
             ['#Contact', (targetEl) => PageContact(targetEl)],
             ['#Home', (targetEl) => PageHome(targetEl)],
             ['', (targetEl) => PageHome(targetEl)]

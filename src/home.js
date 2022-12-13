@@ -1,4 +1,4 @@
-import { Button } from './DOMcomponents/Button';
+import { Button } from './Components/Button';
 
 const PageHome = function PageHome(targetEl) {
 
