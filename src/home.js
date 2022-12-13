@@ -1,6 +1,6 @@
 import { Button } from './DOMcomponents/Button';
 
-const MakeHome = function MakeHome(targetEl) {
+const PageHome = function PageHome(targetEl) {
 
     document.body.className = "home";
 
@@ -32,4 +32,4 @@ const MakeHome = function MakeHome(targetEl) {
 }
 
 
-export { MakeHome };
+export { PageHome };

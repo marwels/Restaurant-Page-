@@ -1,0 +1,12 @@
+
+const HumbleDiv = function HumbleDiv(parentEl, className) {
+    const humbleDiv = document.createElement("div");
+    humbleDiv.className = className;
+    parentEl.appendChild(humbleDiv);
+
+    return () => {
+        parentEl.removeChild(humbleDiv);
+    }
+}
+
+export { HumbleDiv };

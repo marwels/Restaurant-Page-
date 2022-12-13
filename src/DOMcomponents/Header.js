@@ -1,3 +1,5 @@
+import { MenuButton } from './MenuButton';
+
 const Header = function Header(parentEl) {
     const menuBar = document.createElement("div");
     menuBar.classList.add("menu_bar");

@@ -2,10 +2,10 @@ import { Button } from './DOMcomponents/Button';
 // import { Ahref } from './DOMcomponents/Ahref';
 import { MenuButton } from './DOMcomponents/MenuButton';
 import { Header } from './DOMcomponents//Header';
-import { MakeHome } from './home';
+import { PageHome } from './home';
 import { PageSweet } from './sweet';
 import { MakeSavory } from './savory';
-import { MakeContact } from './contact';
+import { PageContact } from './contact';
 
 
 
@@ -48,8 +48,8 @@ const App = function App(parentEl) {
         Router(parentEl, [
             ['#Sweet', (targetEl) => PageSweet(targetEl)],
             ['#Savory', (targetEl) => MakeSavory(targetEl)],
-            ['#Contact', (targetEl) => MakeContact(targetEl)],
-            ['#Home', (targetEl) => MakeHome(targetEl)],
+            ['#Contact', (targetEl) => PageContact(targetEl)],
+            ['#Home', (targetEl) => PageHome(targetEl)],
             ['', (targetEl) => MakeHome(targetEl)]
         ])
     ]
@@ -58,17 +58,6 @@ const App = function App(parentEl) {
         children.forEach(destroy => destroy());
     }
 }
-
-
-// const Home = function Home(targetEl) {
-//     const el = document.createElement("div")
-//     el.innerText = "test";
-
-//     targetEl.appendChild(el)
-//     return () => {
-//         targetEl.removeChild(el);
-//     }
-// }
 
 
 App(document.getElementById("content"));

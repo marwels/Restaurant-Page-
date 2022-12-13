@@ -15,6 +15,7 @@ const Input = function Input(parentEl, className, label, type, name, placeholder
     parentEl.appendChild(input);
 
     return () => {
+        parentEl.removeChild(labelForInput);
         parentEl.removeChild(input);
     }
 }

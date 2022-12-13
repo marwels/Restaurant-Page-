@@ -1,6 +1,8 @@
 import { Input } from './DOMcomponents/Input';
+import { TextArea } from './DOMcomponents/TextArea';
+import { HumbleDiv } from './DOMcomponents/HumbleDiv';
 
-const MakeForm = function MakeForm(targetEl) {
+const Form = function Form(targetEl) {
     const form = document.createElement("form");
     form.setAttribute("method", "post");
     form.setAttribute("action", "example.com/path");
@@ -9,19 +11,7 @@ const MakeForm = function MakeForm(targetEl) {
     children.push(Input(form, "formInput", "Email", "email", "email", ""));
     children.push(Input(form, "formInput", "Name", "text", "name", ""));
     children.push(Input(form, "formInput", "Address", "text", "address", ""));
-
-    const labelForTextarea = document.createElement("label");
-    labelForTextarea.setAttribute("for", "message");
-    labelForTextarea.innerText = "Message";
-    form.appendChild(labelForTextarea);
-
-    const textarea = document.createElement("textarea");
-    textarea.className = "message";
-    textarea.setAttribute("minlength", "1");
-    textarea.setAttribute("maxlength", "2000");
-    textarea.setAttribute("name", "message");
-    textarea.setAttribute("rows", "6");
-    form.appendChild(textarea);
+    children.push(TextArea(form, "message", "Message", "message", "6", "" ));
    
 
     // create a submit button
@@ -36,13 +26,13 @@ const MakeForm = function MakeForm(targetEl) {
 
     return () => {
         children.forEach(destroy => destroy());
-        parentEl.removeChild(form);
+        targetEl.removeChild(form);
     }
 }
 
 const SquareDivWithIcon = function SquareDivWithIcon(parentEl, className, iconUniCode, title, moreText) {
-    const div = document.createElement("div");
-    div.className = className;
+    const divSquareDivWithIcon = document.createElement("div");
+    divSquareDivWithIcon.className = className;
 
     const icon = document.createElement("div");
     icon.className = "icon, material-symbols-outlined";
@@ -57,26 +47,26 @@ const SquareDivWithIcon = function SquareDivWithIcon(parentEl, className, iconUn
     p2.innerText = moreText;
     div.appendChild(p2);
 
-    parentEl.appendChild(div);
+    parentEl.appendChild(divSquareDivWithIcon);
 
     return () => {
-        parentEl.removeChild(div);
+        parentEl.removeChild(divSquareDivWithIcon);
     }
 }
 
 
 
 
-
-const MakeContact = function MakeContact(targetEl) {
+const PageContact = function PageContact(targetEl) {
     document.body.className = "contact";
 
     let contactContainer = document.createElement("div");
     contactContainer.classList.add("contactContainer");
 
     const children = [];
-    children.push(MakeForm(contactContainer));
+    children.push(Form(contactContainer));
 
+    //Jasio: czy tu użyć HumbleDiv i on sprząta czy jak?
     const squares = document.createElement("div");
     squares.classList.add("squares");
     contactContainer.appendChild(squares);
@@ -94,4 +84,4 @@ const MakeContact = function MakeContact(targetEl) {
 }
 
 
-export { MakeContact };
+export { PageContact };

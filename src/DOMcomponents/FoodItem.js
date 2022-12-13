@@ -17,7 +17,7 @@ const FoodItem = function FoodItem(parentEl, className, itemName, price, onClick
 
     parentEl.appendChild(divFoodItem);
 
-    const destroy = Button(div, "order-button", "ORDER", onClickBuy);
+    const destroy = Button(divFoodItem, "order-button", "ORDER", onClickBuy);
 
     return () => {
         destroy();
