@@ -4,9 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        index: './src/index.js',
-        main: './src/main_page.js',
-        sweet: '/src/sweet.js',
+        index: './src/index.js'
     },
     devtool: 'inline-source-map',
     devServer: {
