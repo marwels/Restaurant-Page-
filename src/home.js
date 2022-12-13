@@ -1,4 +1,4 @@
-import { Button } from './DOMcomponents';
+import { Button } from './DOMcomponents/Button';
 
 const MakeHome = function MakeHome(targetEl) {
 

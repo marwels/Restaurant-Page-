@@ -1,6 +1,6 @@
-import { Button } from './DOMcomponents';
-// import { Ahref } from './DOMcomponents';
-import { MenuButton } from './DOMcomponents';
+import { Button } from './DOMcomponents/Button';
+// import { Ahref } from './DOMcomponents/Ahref';
+import { MenuButton } from './DOMcomponents/MenuButton';
 import { MakeHome } from './home';
 import { MakeSweet } from './sweet';
 import { MakeSavory } from './savory';

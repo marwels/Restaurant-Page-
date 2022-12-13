@@ -1,4 +1,4 @@
-import { FoodItem } from './DOMcomponents';
+import { FoodItem } from './DOMcomponents/FoodItem';
 
 
 const MakeSavory = function MakeSavory(targetEl) {
@@ -12,6 +12,9 @@ const MakeSavory = function MakeSavory(targetEl) {
     let itemPrices = [10, 3, 4];
 
     let children = []
+
+    const oldTitle = document.title;
+    document.title = "Savory";
 
     for (let i = 0; i < itemNames.length; i++) {
         // classNameFoodItem += `${i}`
@@ -31,6 +34,7 @@ const MakeSavory = function MakeSavory(targetEl) {
     return () => {
         children.forEach((destroy) => destroy());
         targetEl.removeChild(savoryContainer);
+        document.title = oldTitle;
     }
 }
 

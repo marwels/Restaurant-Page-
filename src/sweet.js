@@ -1,5 +1,5 @@
-// import { Button } from './DOMcomponents';
-import { FoodItem } from './DOMcomponents';
+// import { Button } from './DOMcomponents/Button';
+import { FoodItem } from './DOMcomponents/FoodItem';
 
 
 const MakeSweet = function MakeSweet(targetEl) {
@@ -9,10 +9,36 @@ const MakeSweet = function MakeSweet(targetEl) {
     sweetContainer.classList.add("sweetContainer");
 
     let classNameFoodItem = "foodItem";
-    let itemNames = ["muffin", "csruffin", "pain au chocolat", "croissant", "tartelette"];
-    let itemPrices = [3, 6, 6, 5, 8];
+    // let itemNames = ["muffin", "csruffin", "pain au chocolat", "croissant", "tartelette"];
+    // let itemPrices = [3, 6, 6, 5, 8];
+
+    let items = [
+        {
+            name: "muffin",
+            price: 3,
+        },
+        {
+            name: "csruffin",
+            price: 6,
+        },
+        {
+            name: "pain au chocolat",
+            price: 6,
+        },
+        {
+            name: "croissant",
+            price: 5,
+        },
+        {
+            name: "tartelette",
+            price: 8,
+        }
+    ];
 
     let children = []
+
+    const oldTitle = document.title;
+    document.title = "Sweet";
 
     for (let i = 0; i < 5; i++) {
         // classNameFoodItem += `${i}`
@@ -20,8 +46,8 @@ const MakeSweet = function MakeSweet(targetEl) {
             FoodItem(
                 sweetContainer,
                 classNameFoodItem,
-                itemNames[i],
-                itemPrices[i],
+                items[i].name,
+                items[i].price,
                 () => alert("This would add item to the order"))
         );
     }
@@ -30,6 +56,7 @@ const MakeSweet = function MakeSweet(targetEl) {
     targetEl.appendChild(sweetContainer);
 
     return () => {
+        document.title = oldTitle;
         children.forEach((destroy) => destroy());
         targetEl.removeChild(sweetContainer);
     }

@@ -1,14 +1,14 @@
-import { Input } from './DOMcomponents';
+import { Input } from './DOMcomponents/Input';
 
 const MakeForm = function MakeForm(targetEl) {
-
     const form = document.createElement("form");
     form.setAttribute("method", "post");
     form.setAttribute("action", "example.com/path");
 
-    Input(form, "formInput", "Email", "email", "email", "");
-    Input(form, "formInput", "Name", "text", "name", "");
-    Input(form, "formInput", "Address", "text", "address", "");
+    const children = [];
+    children.push(Input(form, "formInput", "Email", "email", "email", ""));
+    children.push(Input(form, "formInput", "Name", "text", "name", ""));
+    children.push(Input(form, "formInput", "Address", "text", "address", ""));
 
     const labelForTextarea = document.createElement("label");
     labelForTextarea.setAttribute("for", "message");
@@ -35,6 +35,7 @@ const MakeForm = function MakeForm(targetEl) {
 
 
     return () => {
+        children.forEach(destroy => destroy());
         parentEl.removeChild(form);
     }
 }
@@ -73,22 +74,21 @@ const MakeContact = function MakeContact(targetEl) {
     let contactContainer = document.createElement("div");
     contactContainer.classList.add("contactContainer");
 
-
-    MakeForm(contactContainer);
+    const children = [];
+    children.push(MakeForm(contactContainer));
 
     const squares = document.createElement("div");
     squares.classList.add("squares");
     contactContainer.appendChild(squares);
-    SquareDivWithIcon(squares, "SquareDivWithIcon", "home_pin", "OUR MAIN OFFICE", "Somewher 6, Over the Rainbow 12-345");
-    SquareDivWithIcon(squares, "SquareDivWithIcon", "call", "PHONE NUMBER", "1234567890");
-    SquareDivWithIcon(squares, "SquareDivWithIcon", "fax", "FAX", "1234567890");
-    SquareDivWithIcon(squares, "SquareDivWithIcon", "mail", "EMAIL", "bun@bakery.com");
-
-
+    children.push(SquareDivWithIcon(squares, "SquareDivWithIcon", "home_pin", "OUR MAIN OFFICE", "Somewher 6, Over the Rainbow 12-345"));
+    children.push(SquareDivWithIcon(squares, "SquareDivWithIcon", "call", "PHONE NUMBER", "1234567890"));
+    children.push(SquareDivWithIcon(squares, "SquareDivWithIcon", "fax", "FAX", "1234567890"));
+    children.push(SquareDivWithIcon(squares, "SquareDivWithIcon", "mail", "EMAIL", "bun@bakery.com"));
 
     targetEl.appendChild(contactContainer);
 
     return () => {
+        children.forEach(destroy => destroy());
         targetEl.removeChild(contactContainer);
     }
 }
