@@ -1,45 +1,13 @@
 import { Button } from './DOMcomponents/Button';
 // import { Ahref } from './DOMcomponents/Ahref';
 import { MenuButton } from './DOMcomponents/MenuButton';
+import { Header } from './DOMcomponents//Header';
 import { MakeHome } from './home';
-import { MakeSweet } from './sweet';
+import { PageSweet } from './sweet';
 import { MakeSavory } from './savory';
 import { MakeContact } from './contact';
 
 
-
-
-const Header = function Header(parentEl) {
-    const menuBar = document.createElement("div");
-    menuBar.classList.add("menu_bar");
-
-    const logo = document.createElement("div");
-    logo.classList.add("logo");
-    logo.innerText = "LOGO";
-    menuBar.appendChild(logo);
-
-    let menuButtonNames = ["Home", "Sweet", "Savory", "Contact"]
-
-    const menuButtonsDiv = document.createElement("div");
-    menuButtonsDiv.classList.add("menuButtonsDiv");
-
-    const children = [];
-
-    for (let i = 0; i < menuButtonNames.length; i++) {
-        const btn_name = menuButtonNames[i];
-        children.push(MenuButton(menuButtonsDiv, btn_name, () => {
-            window.location.hash = `#${btn_name}`
-        }))
-        // menuButton.addEventListener("click", XXX)
-    }
-    menuBar.appendChild(menuButtonsDiv);
-    parentEl.appendChild(menuBar);
-
-    return () => {
-        children.forEach(destroy => destroy());
-        parentEl.removeChild(menuBar);
-    }
-}
 
 const Router = function Router(parentEl, routes) {
     let current_route = window.location.hash;
@@ -78,7 +46,7 @@ const App = function App(parentEl) {
     const children = [
         Header(parentEl),
         Router(parentEl, [
-            ['#Sweet', (targetEl) => MakeSweet(targetEl)],
+            ['#Sweet', (targetEl) => PageSweet(targetEl)],
             ['#Savory', (targetEl) => MakeSavory(targetEl)],
             ['#Contact', (targetEl) => MakeContact(targetEl)],
             ['#Home', (targetEl) => MakeHome(targetEl)],
@@ -106,8 +74,3 @@ const App = function App(parentEl) {
 App(document.getElementById("content"));
 
 
-
-
-
-export { Button };
-// export { createMainPage };

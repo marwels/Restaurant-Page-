@@ -2,7 +2,7 @@
 import { FoodItem } from './DOMcomponents/FoodItem';
 
 
-const MakeSweet = function MakeSweet(targetEl) {
+const PageSweet = function MakeSweet(targetEl) {
     document.body.className = "sweet";
 
     let sweetContainer = document.createElement("div");
@@ -65,4 +65,4 @@ const MakeSweet = function MakeSweet(targetEl) {
 
 
 
-export { MakeSweet };
+export { PageSweet };
