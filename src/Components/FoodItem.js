@@ -11,7 +11,8 @@ const FoodItem = function FoodItem(parentEl, className, itemName, price, onClick
     title.innerText = itemName;
     titleWrapper.appendChild(title);
     const priceOfItem = document.createElement("h2");
-    priceOfItem.innerText = price;
+    priceOfItem.className="price";
+    priceOfItem.innerText = price + "$";
     titleWrapper.appendChild(priceOfItem);
     divFoodItem.appendChild(titleWrapper);
 
