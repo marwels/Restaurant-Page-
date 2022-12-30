@@ -135,6 +135,9 @@ color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
   /* min-width: 10rem; */
 }
 
@@ -144,8 +147,14 @@ color: #ffffff;
 }
 
 .foodItem h2.itemName {
-  text-align: center;
+  align-self: flex-start;
 }
+
+.foodItem h2.price {
+  color: #f57f54;
+  /* align-self: flex-end; */
+}
+
 
 button.order-button {
   background-color: #f14a0e;
@@ -153,6 +162,10 @@ color: #ffffff;
  border: 1px solid #f14a0e;
  padding: 0.4rem 1rem;
  border-radius: 15px;
+ justify-self: center;
+ align-self: end;
+ margin-bottom: 15px;
+
 }
 
 /* contact */

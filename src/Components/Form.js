@@ -1,5 +1,5 @@
-import { Input } from './Components/Input';
-import { TextArea } from './Components/TextArea';
+import { Input } from './Input';
+import { TextArea } from './TextArea';
 // import { HumbleDiv } from './Components/HumbleDiv';
 
 
