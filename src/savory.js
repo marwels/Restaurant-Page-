@@ -8,22 +8,39 @@ const PageSavory = function PageSavory(targetEl) {
     savoryContainer.classList.add("savoryContainer");
 
     let classNameFoodItem = "foodItem";
-    let itemNames = ["artisan bread", "roll", "ciabatta"];
-    let itemPrices = [10, 3, 4];
+
+    // let itemNames = ["artisan bread", "roll", "ciabatta"];
+    // let itemPrices = [10, 3, 4];
+
+    const items = [
+        {
+            name: "artisan bread",
+            price: 10
+        },
+        {
+            name: "roll",
+            price: 3
+        },
+        {
+            name: "ciabatta",
+            price: 4
+        }
+    ]
+
 
     let children = []
 
     const oldTitle = document.title;
     document.title = "Savory";
 
-    for (let i = 0; i < itemNames.length; i++) {
+    for (let i = 0; i < 3; i++) {
         // classNameFoodItem += `${i}`
         children.push(
             FoodItem(
                 savoryContainer,
                 classNameFoodItem,
-                itemNames[i],
-                itemPrices[i],
+                items[i].name,
+                items[i].price,
                 () => alert("This would add item to the order"))
         );
     }
